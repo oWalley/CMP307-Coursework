@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace CMP307_project
 {
-    public partial class Form1 : Form
+    public partial class Home : Form
     {
-        public Form1()
+        // - Form Variables -
+        Add_form add_form;
+
+        public Home()
         {
             InitializeComponent();
+
+            
         }
 
         private void assetsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -30,6 +35,15 @@ namespace CMP307_project
             // TODO: This line of code loads data into the 'mssql2001921DataSet.Assets' table. You can move, or remove it, as needed.
             this.assetsTableAdapter.Fill(this.mssql2001921DataSet.Assets);
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Add button pressed");
+
+            if(add_form != null) add_form.Close();
+            add_form = new Add_form();
+            add_form.Show();
         }
     }
 }
