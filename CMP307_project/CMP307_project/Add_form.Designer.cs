@@ -114,7 +114,6 @@ namespace CMP307_project
             this.label5.Size = new System.Drawing.Size(34, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "Type:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // txt_type
             // 
@@ -180,6 +179,7 @@ namespace CMP307_project
             this.btn_cancel.TabIndex = 15;
             this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // btn_add
             // 
@@ -189,6 +189,7 @@ namespace CMP307_project
             this.btn_add.TabIndex = 16;
             this.btn_add.Text = "Add Asset";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // Add_form
             // 

@@ -18,8 +18,6 @@ namespace CMP307_project
         public Home()
         {
             InitializeComponent();
-
-            
         }
 
         private void assetsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -45,5 +43,11 @@ namespace CMP307_project
             add_form = new Add_form();
             add_form.Show();
         }
+
+        private void Home_Activated(object sender, EventArgs e)
+        {       
+            this.assetsTableAdapter.Fill(this.mssql2001921DataSet.Assets);
+        }
+
     }
 }

@@ -311,6 +311,7 @@ namespace CMP307_project
             this.Controls.Add(this.assetsBindingNavigator);
             this.Name = "Home";
             this.Text = "Form1";
+            this.Activated += new System.EventHandler(this.Home_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mssql2001921DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetsBindingSource)).EndInit();
