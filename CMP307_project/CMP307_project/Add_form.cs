@@ -35,9 +35,9 @@ namespace CMP307_project
                 conn.Open();
                 Console.WriteLine("Connection successfully established.\n");
 
-                string query = "INSERT INTO dbo.Assets (name, model, manufacturer, type, ip, purchaseDate, notes) VALUES ('"
-                                + txt_name.Text + "', '" + txt_model.Text + "', '" + txt_man.Text + "', '" + txt_type.Text + "', '" 
-                                + txt_ip.Text + "', '" + txt_pd.Text + "', '" + txt_notes.Text + "');";
+                // create query string
+                string query = "INSERT INTO dbo.Assets (name, model, manufacturer, type, ip, purchaseDate, notes) " +
+                                "VALUES (@name, @model, @man, @type, @ip, @pd, @notes);";
 
                 // initialise a command variable with this string
                 SqlCommand command = new SqlCommand(query);
@@ -45,14 +45,24 @@ namespace CMP307_project
                 // link the command to the open connection created earlier
                 command.Connection = conn;
 
+                // set command parameters
+                command.Parameters.AddWithValue("@name", txt_name.Text);
+                command.Parameters.AddWithValue("@model", txt_model.Text);
+                command.Parameters.AddWithValue("@man", txt_man.Text);
+                command.Parameters.AddWithValue("@type", txt_type.Text);
+                command.Parameters.AddWithValue("@ip", txt_ip.Text);
+                command.Parameters.AddWithValue("@pd", txt_pd.Text);
+                command.Parameters.AddWithValue("@notes", txt_notes.Text);
+
                 // Execute the non query
                 int i = command.ExecuteNonQuery();
 
                 Console.WriteLine("SUCCESS! " + i + " Asset added");
 
-                //Close connection             
+                // Close connection             
                 conn.Close();
 
+                // close window
                 Close();
             }
             catch (Exception _e)
