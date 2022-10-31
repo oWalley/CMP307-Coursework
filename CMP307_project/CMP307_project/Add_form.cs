@@ -5,9 +5,11 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Management;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Net;
 
 
 namespace CMP307_project
@@ -68,6 +70,39 @@ namespace CMP307_project
             catch (Exception _e)
             {
                 Console.WriteLine(_e.Message);
+            }
+
+        }
+
+        private void btn_getInfo_Click(object sender, EventArgs e)
+        {
+
+            //link: 
+
+            // Retrieve System Name
+            txt_name.Text = System.Environment.MachineName;
+
+            ManagementClass mng = new ManagementClass("Win32_ComputerSystem");
+            ManagementObjectCollection mngObj = mng.GetInstances();
+
+            foreach (ManagementObject _mo in mngObj)
+            {
+                txt_model.Text = _mo.Properties["Model"].Value.ToString(); // Retrieve System Model
+                txt_man.Text = _mo.Properties["Manufacturer"].Value.ToString(); // Retrieve System Manufacturer
+                txt_type.Text = _mo.Properties["SystemType"].Value.ToString(); // Retrieve System Type
+                break;
+            }
+
+            // Retrieve System IP
+            IPAddress[] addresses = Dns.GetHostAddresses(Dns.GetHostName());
+
+            foreach (IPAddress address in addresses)
+            {
+                if(address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                {
+                    txt_ip.Text = address.ToString();
+                    break;
+                }
             }
 
         }

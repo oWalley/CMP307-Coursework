@@ -46,6 +46,7 @@ namespace CMP307_project
             this.txt_notes = new System.Windows.Forms.TextBox();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
+            this.btn_getInfo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -173,7 +174,7 @@ namespace CMP307_project
             // 
             // btn_cancel
             // 
-            this.btn_cancel.Location = new System.Drawing.Point(11, 416);
+            this.btn_cancel.Location = new System.Drawing.Point(11, 469);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(173, 37);
             this.btn_cancel.TabIndex = 15;
@@ -183,7 +184,7 @@ namespace CMP307_project
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(203, 416);
+            this.btn_add.Location = new System.Drawing.Point(202, 469);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(173, 37);
             this.btn_add.TabIndex = 16;
@@ -191,11 +192,22 @@ namespace CMP307_project
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
+            // btn_getInfo
+            // 
+            this.btn_getInfo.Location = new System.Drawing.Point(12, 416);
+            this.btn_getInfo.Name = "btn_getInfo";
+            this.btn_getInfo.Size = new System.Drawing.Size(364, 37);
+            this.btn_getInfo.TabIndex = 17;
+            this.btn_getInfo.Text = "Get Hardware Info";
+            this.btn_getInfo.UseVisualStyleBackColor = true;
+            this.btn_getInfo.Click += new System.EventHandler(this.btn_getInfo_Click);
+            // 
             // Add_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(388, 465);
+            this.ClientSize = new System.Drawing.Size(388, 518);
+            this.Controls.Add(this.btn_getInfo);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.label8);
@@ -239,5 +251,6 @@ namespace CMP307_project
         private System.Windows.Forms.TextBox txt_notes;
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Button btn_add;
+        private System.Windows.Forms.Button btn_getInfo;
     }
 }
