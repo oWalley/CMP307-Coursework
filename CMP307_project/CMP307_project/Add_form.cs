@@ -77,10 +77,12 @@ namespace CMP307_project
         private void btn_getInfo_Click(object sender, EventArgs e)
         {
 
-            //link: 
-
             // Retrieve System Name
             txt_name.Text = System.Environment.MachineName;
+
+
+            // Reference to original code 
+            // link: https://www.section.io/engineering-education/working-with-system-information-in-c-sharp-windows-form-application/
 
             ManagementClass mng = new ManagementClass("Win32_ComputerSystem");
             ManagementObjectCollection mngObj = mng.GetInstances();
@@ -94,6 +96,8 @@ namespace CMP307_project
             }
 
             // Retrieve System IP
+            // Reference to original code
+            // link: https://learn.microsoft.com/en-us/dotnet/api/system.net.dns.gethostaddresses?view=net-7.0
             IPAddress[] addresses = Dns.GetHostAddresses(Dns.GetHostName());
 
             foreach (IPAddress address in addresses)
