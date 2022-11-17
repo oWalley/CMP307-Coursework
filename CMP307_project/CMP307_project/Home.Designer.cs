@@ -58,6 +58,7 @@ namespace CMP307_project
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_add = new System.Windows.Forms.Button();
+            this.btn_edit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.mssql2001921DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetsBindingNavigator)).BeginInit();
@@ -167,7 +168,6 @@ namespace CMP307_project
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -232,6 +232,7 @@ namespace CMP307_project
             this.assetsDataGridView.MultiSelect = false;
             this.assetsDataGridView.Name = "assetsDataGridView";
             this.assetsDataGridView.ReadOnly = true;
+            this.assetsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.assetsDataGridView.Size = new System.Drawing.Size(844, 287);
             this.assetsDataGridView.TabIndex = 1;
             // 
@@ -301,11 +302,21 @@ namespace CMP307_project
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btn_edit
+            // 
+            this.btn_edit.Location = new System.Drawing.Point(150, 322);
+            this.btn_edit.Name = "btn_edit";
+            this.btn_edit.Size = new System.Drawing.Size(132, 37);
+            this.btn_edit.TabIndex = 3;
+            this.btn_edit.Text = "Edit Asset";
+            this.btn_edit.UseVisualStyleBackColor = true;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(868, 450);
+            this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.assetsDataGridView);
             this.Controls.Add(this.assetsBindingNavigator);
@@ -353,6 +364,7 @@ namespace CMP307_project
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.Button btn_add;
+        private System.Windows.Forms.Button btn_edit;
     }
 }
 
