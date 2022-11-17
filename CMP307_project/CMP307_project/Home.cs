@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace CMP307_project
 {
@@ -70,6 +71,43 @@ namespace CMP307_project
             upd_form.txt_notes.Text = assetsDataGridView.SelectedCells[7].Value.ToString();
 
             upd_form.Show();
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            // Setup Connection
+            string connString = "Data Source = tolmount.abertay.ac.uk; Initial Catalog = mssql2001921; User ID = mssql2001921; Password = Ufk77DqHUA";
+            SqlConnection conn = new SqlConnection(connString);
+
+            try
+            {
+                conn.Open();
+                Console.WriteLine("Connection successfully established.\n");
+
+                // create query string
+                string query = "DELETE FROM dbo.Assets WHERE id = " + assetsDataGridView.SelectedCells[0].Value.ToString();
+
+                // initialise a command variable with this string
+                SqlCommand command = new SqlCommand(query);
+
+                // link the command to the open connection created earlier
+                command.Connection = conn;
+
+                // Execute the non query
+                int i = command.ExecuteNonQuery();
+
+                Console.WriteLine("SUCCESS! " + i + " Asset deleted");
+
+                // Close connection             
+                conn.Close();
+
+                // Update DataGridView
+                this.assetsTableAdapter.Fill(this.mssql2001921DataSet.Assets);
+            }
+            catch (Exception _e)
+            {
+                Console.WriteLine(_e.Message);
+            }
         }
     }
 }
