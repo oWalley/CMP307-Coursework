@@ -310,6 +310,7 @@ namespace CMP307_project
             this.btn_edit.TabIndex = 3;
             this.btn_edit.Text = "Edit Asset";
             this.btn_edit.UseVisualStyleBackColor = true;
+            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
             // Home
             // 

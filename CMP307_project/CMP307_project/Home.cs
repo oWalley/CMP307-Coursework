@@ -14,6 +14,7 @@ namespace CMP307_project
     {
         // - Form Variables -
         Add_form add_form;
+        Update_form upd_form;
 
         public Home()
         {
@@ -49,5 +50,26 @@ namespace CMP307_project
             this.assetsTableAdapter.Fill(this.mssql2001921DataSet.Assets);
         }
 
+        private void btn_edit_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Update button pressed");
+
+            if (upd_form != null) upd_form.Close();
+            upd_form = new Update_form();
+
+            // Get asset id
+            upd_form.assetId = assetsDataGridView.SelectedCells[0].Value.ToString();
+
+            // Fill textboxes with selected asset info
+            upd_form.txt_name.Text = assetsDataGridView.SelectedCells[1].Value.ToString();
+            upd_form.txt_model.Text = assetsDataGridView.SelectedCells[2].Value.ToString();
+            upd_form.txt_man.Text = assetsDataGridView.SelectedCells[3].Value.ToString();
+            upd_form.txt_type.Text = assetsDataGridView.SelectedCells[4].Value.ToString();
+            upd_form.txt_ip.Text = assetsDataGridView.SelectedCells[5].Value.ToString();
+            upd_form.txt_pd.Text = assetsDataGridView.SelectedCells[6].Value.ToString();
+            upd_form.txt_notes.Text = assetsDataGridView.SelectedCells[7].Value.ToString();
+
+            upd_form.Show();
+        }
     }
 }

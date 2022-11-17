@@ -56,6 +56,7 @@ namespace CMP307_project
             this.btn_update.TabIndex = 33;
             this.btn_update.Text = "Update Asset";
             this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // btn_cancel
             // 
@@ -65,6 +66,7 @@ namespace CMP307_project
             this.btn_cancel.TabIndex = 32;
             this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // label8
             // 
@@ -222,19 +224,19 @@ namespace CMP307_project
         private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txt_notes;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txt_pd;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txt_ip;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_type;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_man;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_model;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_name;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox txt_name;
+        public System.Windows.Forms.TextBox txt_notes;
+        public System.Windows.Forms.TextBox txt_pd;
+        public System.Windows.Forms.TextBox txt_ip;
+        public System.Windows.Forms.TextBox txt_type;
+        public System.Windows.Forms.TextBox txt_man;
+        public System.Windows.Forms.TextBox txt_model;
     }
 }
