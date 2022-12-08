@@ -38,7 +38,7 @@ namespace CMP307_project
                 Console.WriteLine("Connection successfully established.\n");
 
                 // create query string
-                string query = "UPDATE dbo.Assets SET name = @name, model = @model, manufacturer = @man, type = @type, ip = @ip, purchaseDate = @pd, notes = @notes WHERE id = " + assetId;
+                string query = "UPDATE dbo.Assets SET name = @name, model = @model, manufacturer = @man, type = @type, ip = @ip, purchaseDate = @pd, notes = @notes WHERE id = @id";
                                 
                 // initialise a command variable with this string
                 SqlCommand command = new SqlCommand(query);
@@ -54,6 +54,7 @@ namespace CMP307_project
                 command.Parameters.AddWithValue("@ip", txt_ip.Text);
                 command.Parameters.AddWithValue("@pd", txt_pd.Text);
                 command.Parameters.AddWithValue("@notes", txt_notes.Text);
+                command.Parameters.AddWithValue("@id", assetId);
 
                 // Execute the non query
                 int i = command.ExecuteNonQuery();
