@@ -34,7 +34,7 @@ namespace CMP307_project
             this.assetsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.assetsTableAdapter = new CMP307_project.mssql2001921DataSetTableAdapters.AssetsTableAdapter();
             this.tableAdapterManager = new CMP307_project.mssql2001921DataSetTableAdapters.TableAdapterManager();
-            this.assetsDataGridView = new System.Windows.Forms.DataGridView();
+            this.assetsDGV_h = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +48,7 @@ namespace CMP307_project
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
-            this.assets2DataGridView = new System.Windows.Forms.DataGridView();
+            this.assetsDGV_s = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,11 +63,11 @@ namespace CMP307_project
             this.btn_edit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.mssql2001921DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.assetsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assetsDGV_h)).BeginInit();
             this.tab_assetType.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.assets2DataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assetsDGV_s)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assets2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mssql2001921DataSet1)).BeginInit();
             this.SuspendLayout();
@@ -92,15 +92,15 @@ namespace CMP307_project
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.UpdateOrder = CMP307_project.mssql2001921DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // assetsDataGridView
+            // assetsDGV_h
             // 
-            this.assetsDataGridView.AllowUserToAddRows = false;
-            this.assetsDataGridView.AllowUserToDeleteRows = false;
-            this.assetsDataGridView.AllowUserToResizeColumns = false;
-            this.assetsDataGridView.AllowUserToResizeRows = false;
-            this.assetsDataGridView.AutoGenerateColumns = false;
-            this.assetsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.assetsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.assetsDGV_h.AllowUserToAddRows = false;
+            this.assetsDGV_h.AllowUserToDeleteRows = false;
+            this.assetsDGV_h.AllowUserToResizeColumns = false;
+            this.assetsDGV_h.AllowUserToResizeRows = false;
+            this.assetsDGV_h.AutoGenerateColumns = false;
+            this.assetsDGV_h.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.assetsDGV_h.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -109,15 +109,15 @@ namespace CMP307_project
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
-            this.assetsDataGridView.DataSource = this.assetsBindingSource;
-            this.assetsDataGridView.Location = new System.Drawing.Point(15, 29);
-            this.assetsDataGridView.MultiSelect = false;
-            this.assetsDataGridView.Name = "assetsDataGridView";
-            this.assetsDataGridView.ReadOnly = true;
-            this.assetsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.assetsDataGridView.ShowEditingIcon = false;
-            this.assetsDataGridView.Size = new System.Drawing.Size(844, 287);
-            this.assetsDataGridView.TabIndex = 1;
+            this.assetsDGV_h.DataSource = this.assetsBindingSource;
+            this.assetsDGV_h.Location = new System.Drawing.Point(15, 29);
+            this.assetsDGV_h.MultiSelect = false;
+            this.assetsDGV_h.Name = "assetsDGV_h";
+            this.assetsDGV_h.ReadOnly = true;
+            this.assetsDGV_h.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.assetsDGV_h.ShowEditingIcon = false;
+            this.assetsDGV_h.Size = new System.Drawing.Size(844, 287);
+            this.assetsDGV_h.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -187,7 +187,7 @@ namespace CMP307_project
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.assetsDataGridView);
+            this.tabPage1.Controls.Add(this.assetsDGV_h);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -211,7 +211,7 @@ namespace CMP307_project
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.assets2DataGridView);
+            this.tabPage2.Controls.Add(this.assetsDGV_s);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -231,26 +231,26 @@ namespace CMP307_project
             this.label2.TabIndex = 6;
             this.label2.Text = "Software Assets";
             // 
-            // assets2DataGridView
+            // assetsDGV_s
             // 
-            this.assets2DataGridView.AllowUserToDeleteRows = false;
-            this.assets2DataGridView.AllowUserToResizeColumns = false;
-            this.assets2DataGridView.AllowUserToResizeRows = false;
-            this.assets2DataGridView.AutoGenerateColumns = false;
-            this.assets2DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.assets2DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.assetsDGV_s.AllowUserToDeleteRows = false;
+            this.assetsDGV_s.AllowUserToResizeColumns = false;
+            this.assetsDGV_s.AllowUserToResizeRows = false;
+            this.assetsDGV_s.AutoGenerateColumns = false;
+            this.assetsDGV_s.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.assetsDGV_s.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13});
-            this.assets2DataGridView.DataSource = this.assets2BindingSource;
-            this.assets2DataGridView.Location = new System.Drawing.Point(15, 29);
-            this.assets2DataGridView.Name = "assets2DataGridView";
-            this.assets2DataGridView.ReadOnly = true;
-            this.assets2DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.assets2DataGridView.Size = new System.Drawing.Size(543, 287);
-            this.assets2DataGridView.TabIndex = 0;
+            this.assetsDGV_s.DataSource = this.assets2BindingSource;
+            this.assetsDGV_s.Location = new System.Drawing.Point(15, 29);
+            this.assetsDGV_s.Name = "assetsDGV_s";
+            this.assetsDGV_s.ReadOnly = true;
+            this.assetsDGV_s.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.assetsDGV_s.Size = new System.Drawing.Size(543, 287);
+            this.assetsDGV_s.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -315,6 +315,7 @@ namespace CMP307_project
             this.btn_delete.TabIndex = 10;
             this.btn_delete.Text = "Delete Asset";
             this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_add
             // 
@@ -350,13 +351,13 @@ namespace CMP307_project
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mssql2001921DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.assetsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assetsDGV_h)).EndInit();
             this.tab_assetType.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.assets2DataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assetsDGV_s)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assets2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mssql2001921DataSet1)).EndInit();
             this.ResumeLayout(false);
@@ -369,7 +370,7 @@ namespace CMP307_project
         private System.Windows.Forms.BindingSource assetsBindingSource;
         private mssql2001921DataSetTableAdapters.AssetsTableAdapter assetsTableAdapter;
         private mssql2001921DataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView assetsDataGridView;
+        private System.Windows.Forms.DataGridView assetsDGV_h;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -387,7 +388,7 @@ namespace CMP307_project
         private mssql2001921DataSet1TableAdapters.Assets2TableAdapter assets2TableAdapter;
         private mssql2001921DataSet1TableAdapters.TableAdapterManager tableAdapterManager1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView assets2DataGridView;
+        private System.Windows.Forms.DataGridView assetsDGV_s;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
