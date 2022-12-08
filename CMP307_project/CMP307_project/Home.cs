@@ -33,18 +33,23 @@ namespace CMP307_project
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'mssql2001921DataSet1.Assets2' table. You can move, or remove it, as needed.
+            this.assets2TableAdapter.Fill(this.mssql2001921DataSet1.Assets2);
             // TODO: This line of code loads data into the 'mssql2001921DataSet.Assets' table. You can move, or remove it, as needed.
             this.assetsTableAdapter.Fill(this.mssql2001921DataSet.Assets);
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_add_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Add button pressed");
 
-            if(add_form != null) add_form.Close();
-            add_form = new Add_form();
-            add_form.Show();
+            if (tab_assetType.SelectedIndex == 0)
+            {
+                if (add_form != null) add_form.Close();
+                add_form = new Add_form();
+                add_form.Show();
+            }
         }
 
         private void Home_Activated(object sender, EventArgs e)
@@ -56,59 +61,66 @@ namespace CMP307_project
         {
             Console.WriteLine("Update button pressed");
 
-            if (upd_form != null) upd_form.Close();
-            upd_form = new Update_form();
+            if (tab_assetType.SelectedIndex == 0)
+            {
+                if (upd_form != null) upd_form.Close();
+                upd_form = new Update_form();
 
-            // Get asset id
-            upd_form.assetId = assetsDataGridView.SelectedCells[0].Value.ToString();
+                // Get asset id
+                upd_form.assetId = assetsDataGridView.SelectedCells[0].Value.ToString();
 
-            // Fill textboxes with selected asset info
-            upd_form.txt_name.Text = assetsDataGridView.SelectedCells[1].Value.ToString();
-            upd_form.txt_model.Text = assetsDataGridView.SelectedCells[2].Value.ToString();
-            upd_form.txt_man.Text = assetsDataGridView.SelectedCells[3].Value.ToString();
-            upd_form.txt_type.Text = assetsDataGridView.SelectedCells[4].Value.ToString();
-            upd_form.txt_ip.Text = assetsDataGridView.SelectedCells[5].Value.ToString();
-            upd_form.txt_pd.Text = assetsDataGridView.SelectedCells[6].Value.ToString();
-            upd_form.txt_notes.Text = assetsDataGridView.SelectedCells[7].Value.ToString();
+                // Fill textboxes with selected asset info
+                upd_form.txt_name.Text = assetsDataGridView.SelectedCells[1].Value.ToString();
+                upd_form.txt_model.Text = assetsDataGridView.SelectedCells[2].Value.ToString();
+                upd_form.txt_man.Text = assetsDataGridView.SelectedCells[3].Value.ToString();
+                upd_form.txt_type.Text = assetsDataGridView.SelectedCells[4].Value.ToString();
+                upd_form.txt_ip.Text = assetsDataGridView.SelectedCells[5].Value.ToString();
+                upd_form.txt_pd.Text = assetsDataGridView.SelectedCells[6].Value.ToString();
+                upd_form.txt_notes.Text = assetsDataGridView.SelectedCells[7].Value.ToString();
 
-            upd_form.Show();
+                upd_form.Show();
+            }
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            // Setup Connection
-            string connString = ConfigurationManager.ConnectionStrings["dbConnection"].ToString();
-            SqlConnection conn = new SqlConnection(connString);
-            
-            try
+            if (tab_assetType.SelectedIndex == 0)
             {
-                conn.Open();
-                Console.WriteLine("Connection successfully established.\n");
+                // Setup Connection
+                string connString = ConfigurationManager.ConnectionStrings["dbConnection"].ToString();
+                SqlConnection conn = new SqlConnection(connString);
 
-                // create query string
-                string query = "DELETE FROM dbo.Assets WHERE id = " + assetsDataGridView.SelectedCells[0].Value.ToString();
+                try
+                {
+                    conn.Open();
+                    Console.WriteLine("Connection successfully established.\n");
 
-                // initialise a command variable with this string
-                SqlCommand command = new SqlCommand(query);
+                    // create query string
+                    string query = "DELETE FROM dbo.Assets WHERE id = " + assetsDataGridView.SelectedCells[0].Value.ToString();
 
-                // link the command to the open connection created earlier
-                command.Connection = conn;
+                    // initialise a command variable with this string
+                    SqlCommand command = new SqlCommand(query);
 
-                // Execute the non query
-                int i = command.ExecuteNonQuery();
+                    // link the command to the open connection created earlier
+                    command.Connection = conn;
 
-                Console.WriteLine("SUCCESS! " + i + " Asset deleted");
+                    // Execute the non query
+                    int i = command.ExecuteNonQuery();
 
-                // Close connection             
-                conn.Close();
+                    Console.WriteLine("SUCCESS! " + i + " Asset deleted");
 
-                // Update DataGridView
-                this.assetsTableAdapter.Fill(this.mssql2001921DataSet.Assets);
-            }
-            catch (Exception _e)
-            {
-                Console.WriteLine(_e.Message);
+                    // Close connection             
+                    conn.Close();
+
+                    // Update DataGridView
+                    this.assetsTableAdapter.Fill(this.mssql2001921DataSet.Assets);
+                }
+                catch (Exception _e)
+                {
+                    Console.WriteLine(_e.Message);
+                }
             }
         }
+
     }
 }
