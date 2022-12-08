@@ -16,7 +16,14 @@ namespace CMP307_project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Home());
+            
+            DialogResult result;
+
+            using (var loginForm = new Login_form())
+                result = loginForm.ShowDialog();
+
+            if(result == DialogResult.OK) 
+                Application.Run(new Home());
         }
     }
 }

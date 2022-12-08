@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace CMP307_project
 {
@@ -28,7 +29,7 @@ namespace CMP307_project
         private void btn_update_Click(object sender, EventArgs e)
         {
             // Setup Connection
-            string connString = "Data Source = tolmount.abertay.ac.uk; Initial Catalog = mssql2001921; User ID = mssql2001921; Password = Ufk77DqHUA";
+            string connString = ConfigurationManager.ConnectionStrings["dbConnection"].ToString();
             SqlConnection conn = new SqlConnection(connString);
 
             try
