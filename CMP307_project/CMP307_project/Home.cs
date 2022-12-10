@@ -15,8 +15,9 @@ namespace CMP307_project
     public partial class Home : Form
     {
         // - Form Variables -
-        Add_form add_form;
-        Update_form upd_form;
+        Add_form_h add_form_hard;
+        Update_form_h upd_form_hard;
+        Add_form_s add_form_soft;
 
         public Home()
         {
@@ -46,9 +47,15 @@ namespace CMP307_project
 
             if (tab_assetType.SelectedIndex == 0)
             {
-                if (add_form != null) add_form.Close();
-                add_form = new Add_form();
-                add_form.Show();
+                if (add_form_hard != null) add_form_hard.Close();
+                add_form_hard = new Add_form_h();
+                add_form_hard.Show();
+            }
+            else 
+            {
+                if (add_form_soft != null) add_form_soft.Close();
+                add_form_soft = new Add_form_s();
+                add_form_soft.Show();
             }
         }
 
@@ -63,22 +70,22 @@ namespace CMP307_project
 
             if (tab_assetType.SelectedIndex == 0)
             {
-                if (upd_form != null) upd_form.Close();
-                upd_form = new Update_form();
+                if (upd_form_hard != null) upd_form_hard.Close();
+                upd_form_hard = new Update_form_h();
 
                 // Get asset id
-                upd_form.assetId = assetsDGV_h.SelectedCells[0].Value.ToString();
+                upd_form_hard.assetId = assetsDGV_h.SelectedCells[0].Value.ToString();
 
                 // Fill textboxes with selected asset info
-                upd_form.txt_name.Text = assetsDGV_h.SelectedCells[1].Value.ToString();
-                upd_form.txt_model.Text = assetsDGV_h.SelectedCells[2].Value.ToString();
-                upd_form.txt_man.Text = assetsDGV_h.SelectedCells[3].Value.ToString();
-                upd_form.txt_type.Text = assetsDGV_h.SelectedCells[4].Value.ToString();
-                upd_form.txt_ip.Text = assetsDGV_h.SelectedCells[5].Value.ToString();
-                upd_form.txt_pd.Text = assetsDGV_h.SelectedCells[6].Value.ToString();
-                upd_form.txt_notes.Text = assetsDGV_h.SelectedCells[7].Value.ToString();
+                upd_form_hard.txt_name.Text = assetsDGV_h.SelectedCells[1].Value.ToString();
+                upd_form_hard.txt_model.Text = assetsDGV_h.SelectedCells[2].Value.ToString();
+                upd_form_hard.txt_man.Text = assetsDGV_h.SelectedCells[3].Value.ToString();
+                upd_form_hard.txt_type.Text = assetsDGV_h.SelectedCells[4].Value.ToString();
+                upd_form_hard.txt_ip.Text = assetsDGV_h.SelectedCells[5].Value.ToString();
+                upd_form_hard.txt_pd.Text = assetsDGV_h.SelectedCells[6].Value.ToString();
+                upd_form_hard.txt_notes.Text = assetsDGV_h.SelectedCells[7].Value.ToString();
 
-                upd_form.Show();
+                upd_form_hard.Show();
             }
         }
 
@@ -130,5 +137,6 @@ namespace CMP307_project
             }
 
         }
+
     }
 }

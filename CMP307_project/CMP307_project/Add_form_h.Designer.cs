@@ -1,7 +1,7 @@
 ﻿
 namespace CMP307_project
 {
-    partial class Add_form
+    partial class Add_form_h
     {
         /// <summary>
         /// Required designer variable.
@@ -53,11 +53,11 @@ namespace CMP307_project
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(148, 9);
+            this.label1.Location = new System.Drawing.Point(101, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 24);
+            this.label1.Size = new System.Drawing.Size(183, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Add Asset";
+            this.label1.Text = "Add Hardware Asset";
             // 
             // txt_name
             // 
@@ -202,7 +202,7 @@ namespace CMP307_project
             this.btn_getInfo.UseVisualStyleBackColor = true;
             this.btn_getInfo.Click += new System.EventHandler(this.btn_getInfo_Click);
             // 
-            // Add_form
+            // Add_form_h
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -225,7 +225,7 @@ namespace CMP307_project
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_name);
             this.Controls.Add(this.label1);
-            this.Name = "Add_form";
+            this.Name = "Add_form_h";
             this.Text = "Add_form";
             this.ResumeLayout(false);
             this.PerformLayout();

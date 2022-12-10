@@ -1,7 +1,7 @@
 ﻿
 namespace CMP307_project
 {
-    partial class Update_form
+    partial class Update_form_h
     {
         /// <summary>
         /// Required designer variable.

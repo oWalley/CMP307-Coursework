@@ -15,9 +15,9 @@ using System.Configuration;
 
 namespace CMP307_project
 {
-    public partial class Add_form : Form
+    public partial class Add_form_h : Form
     {
-        public Add_form()
+        public Add_form_h()
         {
             InitializeComponent();
         }

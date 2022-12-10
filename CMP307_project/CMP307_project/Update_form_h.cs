@@ -12,11 +12,11 @@ using System.Configuration;
 
 namespace CMP307_project
 {
-    public partial class Update_form : Form
+    public partial class Update_form_h : Form
     {
         public string assetId;
 
-        public Update_form()
+        public Update_form_h()
         {
             InitializeComponent();
         }
