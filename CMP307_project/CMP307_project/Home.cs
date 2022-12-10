@@ -24,14 +24,6 @@ namespace CMP307_project
             InitializeComponent();
         }
 
-        private void assetsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.assetsBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.mssql2001921DataSet);
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'mssql2001921DataSet1.Assets2' table. You can move, or remove it, as needed.
@@ -62,6 +54,7 @@ namespace CMP307_project
         private void Home_Activated(object sender, EventArgs e)
         {       
             this.assetsTableAdapter.Fill(this.mssql2001921DataSet.Assets);
+            this.assets2TableAdapter.Fill(this.mssql2001921DataSet1.Assets2);
         }
 
         private void btn_edit_Click(object sender, EventArgs e)

@@ -31,11 +31,11 @@ namespace CMP307_project
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_type = new System.Windows.Forms.TextBox();
+            this.txt_hid = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_man = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txt_model = new System.Windows.Forms.TextBox();
+            this.txt_version = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.btn_getInfo = new System.Windows.Forms.Button();
@@ -62,12 +62,12 @@ namespace CMP307_project
             this.label5.TabIndex = 16;
             this.label5.Text = "Hardware Asset ID (optional):";
             // 
-            // txt_type
+            // txt_hid
             // 
-            this.txt_type.Location = new System.Drawing.Point(12, 245);
-            this.txt_type.Name = "txt_type";
-            this.txt_type.Size = new System.Drawing.Size(364, 20);
-            this.txt_type.TabIndex = 15;
+            this.txt_hid.Location = new System.Drawing.Point(12, 245);
+            this.txt_hid.Name = "txt_hid";
+            this.txt_hid.Size = new System.Drawing.Size(364, 20);
+            this.txt_hid.TabIndex = 15;
             // 
             // label4
             // 
@@ -94,12 +94,12 @@ namespace CMP307_project
             this.label3.TabIndex = 12;
             this.label3.Text = "Version:";
             // 
-            // txt_model
+            // txt_version
             // 
-            this.txt_model.Location = new System.Drawing.Point(12, 126);
-            this.txt_model.Name = "txt_model";
-            this.txt_model.Size = new System.Drawing.Size(364, 20);
-            this.txt_model.TabIndex = 11;
+            this.txt_version.Location = new System.Drawing.Point(12, 126);
+            this.txt_version.Name = "txt_version";
+            this.txt_version.Size = new System.Drawing.Size(364, 20);
+            this.txt_version.TabIndex = 11;
             // 
             // label2
             // 
@@ -125,6 +125,7 @@ namespace CMP307_project
             this.btn_getInfo.TabIndex = 20;
             this.btn_getInfo.Text = "Get Software Info";
             this.btn_getInfo.UseVisualStyleBackColor = true;
+            this.btn_getInfo.Click += new System.EventHandler(this.btn_getInfo_Click);
             // 
             // btn_add
             // 
@@ -134,6 +135,7 @@ namespace CMP307_project
             this.btn_add.TabIndex = 19;
             this.btn_add.Text = "Add Asset";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_cancel
             // 
@@ -143,6 +145,7 @@ namespace CMP307_project
             this.btn_cancel.TabIndex = 18;
             this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // Add_form_s
             // 
@@ -153,11 +156,11 @@ namespace CMP307_project
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txt_type);
+            this.Controls.Add(this.txt_hid);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txt_man);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txt_model);
+            this.Controls.Add(this.txt_version);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_name);
             this.Controls.Add(this.label1);
@@ -172,11 +175,11 @@ namespace CMP307_project
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_type;
+        private System.Windows.Forms.TextBox txt_hid;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_man;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_model;
+        private System.Windows.Forms.TextBox txt_version;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_name;
         private System.Windows.Forms.Button btn_getInfo;
