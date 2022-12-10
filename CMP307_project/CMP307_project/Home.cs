@@ -151,5 +151,96 @@ namespace CMP307_project
 
         }
 
+        private void assetsDGV_h_SelectionChanged(object sender, EventArgs e)
+        {
+            // Setup Connection
+            string connString = ConfigurationManager.ConnectionStrings["dbConnection"].ToString();
+            SqlConnection conn = new SqlConnection(connString);
+   
+            try
+            {
+                conn.Open();
+                Console.WriteLine("Connection successfully established.\n");
+
+                // create query string
+                string query = "SELECT * FROM dbo.Assets2 WHERE hardware_id = " + assetsDGV_h.SelectedCells[0].Value.ToString();
+
+                // Setup data adapter
+                var dataAdapter = new SqlDataAdapter(query, conn);
+
+                // Execute the non query
+                var ds = new DataSet();
+                dataAdapter.Fill(ds);
+
+                dgv_linked_software.DataSource = ds.Tables[0];
+
+                Console.WriteLine("SUCCESS! Assets retrieved");
+
+                // Close connection             
+                conn.Close();
+        
+            }
+            catch (Exception _e)
+            {
+                Console.WriteLine(_e.Message);
+            }
+        }
+
+        private void assetsDGV_s_SelectionChanged(object sender, EventArgs e)
+        {
+            // Setup Connection
+            string connString = ConfigurationManager.ConnectionStrings["dbConnection"].ToString();
+            SqlConnection conn = new SqlConnection(connString);
+
+            try
+            {
+                conn.Open();
+                Console.WriteLine("Connection successfully established.\n");
+
+                // create query string
+                string query = "SELECT * FROM dbo.Assets WHERE id = " + assetsDGV_s.SelectedCells[4].Value.ToString();
+              
+                var command = new SqlCommand(query);
+                command.Connection = conn;
+
+                // create a reader to capture the retrieved data from the executed command
+                SqlDataReader data = command.ExecuteReader();
+
+                if(data.HasRows)
+                {
+                    while (data.Read())
+                    {
+                        lbl_name.Text = Convert.ToString(data[1]);
+                        lbl_model.Text = Convert.ToString(data[2]);
+                        lbl_man.Text = Convert.ToString(data[3]);
+                        lbl_type.Text = Convert.ToString(data[4]);
+                        lbl_ip.Text = Convert.ToString(data[5]);
+                        lbl_pd.Text = Convert.ToString(data[6]);
+                        lbl_notes.Text = Convert.ToString(data[7]);
+                    }
+                }
+                else 
+                {
+                    lbl_name.Text = "";
+                    lbl_model.Text = "";
+                    lbl_man.Text =  "";
+                    lbl_type.Text = "";
+                    lbl_ip.Text = "";
+                    lbl_pd.Text = "";
+                    lbl_notes.Text = "";     
+                }
+                
+
+                Console.WriteLine("SUCCESS! Assets retrieved");
+
+                //Close connection
+                conn.Close();
+
+            }
+            catch (Exception _e)
+            {
+                Console.WriteLine(_e.Message);
+            }
+        }
     }
 }

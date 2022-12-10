@@ -45,8 +45,25 @@ namespace CMP307_project
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tab_assetType = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dgv_linked_software = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lbl_notes = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.lbl_pd = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.lbl_ip = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.lbl_type = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lbl_man = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lbl_model = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lbl_name = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.assetsDGV_s = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +83,7 @@ namespace CMP307_project
             ((System.ComponentModel.ISupportInitialize)(this.assetsDGV_h)).BeginInit();
             this.tab_assetType.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_linked_software)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.assetsDGV_s)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assets2BindingSource)).BeginInit();
@@ -116,8 +134,9 @@ namespace CMP307_project
             this.assetsDGV_h.ReadOnly = true;
             this.assetsDGV_h.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.assetsDGV_h.ShowEditingIcon = false;
-            this.assetsDGV_h.Size = new System.Drawing.Size(844, 287);
+            this.assetsDGV_h.Size = new System.Drawing.Size(844, 193);
             this.assetsDGV_h.TabIndex = 1;
+            this.assetsDGV_h.SelectionChanged += new System.EventHandler(this.assetsDGV_h_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -182,20 +201,49 @@ namespace CMP307_project
             this.tab_assetType.Location = new System.Drawing.Point(12, 12);
             this.tab_assetType.Name = "tab_assetType";
             this.tab_assetType.SelectedIndex = 0;
-            this.tab_assetType.Size = new System.Drawing.Size(881, 357);
+            this.tab_assetType.Size = new System.Drawing.Size(881, 410);
             this.tab_assetType.TabIndex = 7;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.dgv_linked_software);
             this.tabPage1.Controls.Add(this.assetsDGV_h);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(873, 331);
+            this.tabPage1.Size = new System.Drawing.Size(873, 384);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Hardware";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(11, 251);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(190, 20);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Software Assets Installed";
+            // 
+            // dgv_linked_software
+            // 
+            this.dgv_linked_software.AllowUserToAddRows = false;
+            this.dgv_linked_software.AllowUserToDeleteRows = false;
+            this.dgv_linked_software.AllowUserToOrderColumns = true;
+            this.dgv_linked_software.AllowUserToResizeColumns = false;
+            this.dgv_linked_software.AllowUserToResizeRows = false;
+            this.dgv_linked_software.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_linked_software.Enabled = false;
+            this.dgv_linked_software.Location = new System.Drawing.Point(15, 274);
+            this.dgv_linked_software.MultiSelect = false;
+            this.dgv_linked_software.Name = "dgv_linked_software";
+            this.dgv_linked_software.ReadOnly = true;
+            this.dgv_linked_software.Size = new System.Drawing.Size(844, 95);
+            this.dgv_linked_software.TabIndex = 6;
             // 
             // label1
             // 
@@ -210,15 +258,188 @@ namespace CMP307_project
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.lbl_notes);
+            this.tabPage2.Controls.Add(this.label18);
+            this.tabPage2.Controls.Add(this.lbl_pd);
+            this.tabPage2.Controls.Add(this.label16);
+            this.tabPage2.Controls.Add(this.lbl_ip);
+            this.tabPage2.Controls.Add(this.label14);
+            this.tabPage2.Controls.Add(this.lbl_type);
+            this.tabPage2.Controls.Add(this.label12);
+            this.tabPage2.Controls.Add(this.lbl_man);
+            this.tabPage2.Controls.Add(this.label10);
+            this.tabPage2.Controls.Add(this.lbl_model);
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.lbl_name);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.assetsDGV_s);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(873, 331);
+            this.tabPage2.Size = new System.Drawing.Size(873, 384);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Software";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // lbl_notes
+            // 
+            this.lbl_notes.AutoSize = true;
+            this.lbl_notes.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_notes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_notes.Location = new System.Drawing.Point(617, 196);
+            this.lbl_notes.Name = "lbl_notes";
+            this.lbl_notes.Size = new System.Drawing.Size(0, 13);
+            this.lbl_notes.TabIndex = 21;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(573, 196);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(38, 13);
+            this.label18.TabIndex = 20;
+            this.label18.Text = "Notes:";
+            // 
+            // lbl_pd
+            // 
+            this.lbl_pd.AutoSize = true;
+            this.lbl_pd.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_pd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_pd.Location = new System.Drawing.Point(658, 173);
+            this.lbl_pd.Name = "lbl_pd";
+            this.lbl_pd.Size = new System.Drawing.Size(0, 13);
+            this.lbl_pd.TabIndex = 19;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(573, 173);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(79, 13);
+            this.label16.TabIndex = 18;
+            this.label16.Text = "Purchase date:";
+            // 
+            // lbl_ip
+            // 
+            this.lbl_ip.AutoSize = true;
+            this.lbl_ip.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_ip.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ip.Location = new System.Drawing.Point(640, 150);
+            this.lbl_ip.Name = "lbl_ip";
+            this.lbl_ip.Size = new System.Drawing.Size(0, 13);
+            this.lbl_ip.TabIndex = 17;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(573, 150);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(61, 13);
+            this.label14.TabIndex = 16;
+            this.label14.Text = "IP Address:";
+            // 
+            // lbl_type
+            // 
+            this.lbl_type.AutoSize = true;
+            this.lbl_type.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_type.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_type.Location = new System.Drawing.Point(617, 127);
+            this.lbl_type.Name = "lbl_type";
+            this.lbl_type.Size = new System.Drawing.Size(0, 13);
+            this.lbl_type.TabIndex = 15;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(573, 127);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(34, 13);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Type:";
+            // 
+            // lbl_man
+            // 
+            this.lbl_man.AutoSize = true;
+            this.lbl_man.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_man.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_man.Location = new System.Drawing.Point(652, 103);
+            this.lbl_man.Name = "lbl_man";
+            this.lbl_man.Size = new System.Drawing.Size(0, 13);
+            this.lbl_man.TabIndex = 13;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(573, 103);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(73, 13);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Manufacturer:";
+            // 
+            // lbl_model
+            // 
+            this.lbl_model.AutoSize = true;
+            this.lbl_model.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_model.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_model.Location = new System.Drawing.Point(618, 78);
+            this.lbl_model.Name = "lbl_model";
+            this.lbl_model.Size = new System.Drawing.Size(0, 13);
+            this.lbl_model.TabIndex = 11;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(573, 78);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(39, 13);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Model:";
+            // 
+            // lbl_name
+            // 
+            this.lbl_name.AutoSize = true;
+            this.lbl_name.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_name.Location = new System.Drawing.Point(617, 52);
+            this.lbl_name.Name = "lbl_name";
+            this.lbl_name.Size = new System.Drawing.Size(0, 13);
+            this.lbl_name.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(573, 52);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Name:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(572, 6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(153, 20);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Hardware Origin info";
             // 
             // label2
             // 
@@ -251,6 +472,7 @@ namespace CMP307_project
             this.assetsDGV_s.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.assetsDGV_s.Size = new System.Drawing.Size(543, 287);
             this.assetsDGV_s.TabIndex = 0;
+            this.assetsDGV_s.SelectionChanged += new System.EventHandler(this.assetsDGV_s_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -309,7 +531,7 @@ namespace CMP307_project
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(288, 375);
+            this.btn_delete.Location = new System.Drawing.Point(288, 428);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(132, 37);
             this.btn_delete.TabIndex = 10;
@@ -319,7 +541,7 @@ namespace CMP307_project
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(12, 375);
+            this.btn_add.Location = new System.Drawing.Point(12, 428);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(132, 38);
             this.btn_add.TabIndex = 8;
@@ -329,7 +551,7 @@ namespace CMP307_project
             // 
             // btn_edit
             // 
-            this.btn_edit.Location = new System.Drawing.Point(150, 375);
+            this.btn_edit.Location = new System.Drawing.Point(150, 428);
             this.btn_edit.Name = "btn_edit";
             this.btn_edit.Size = new System.Drawing.Size(132, 37);
             this.btn_edit.TabIndex = 9;
@@ -341,7 +563,7 @@ namespace CMP307_project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(905, 425);
+            this.ClientSize = new System.Drawing.Size(905, 477);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.btn_edit);
@@ -356,6 +578,7 @@ namespace CMP307_project
             this.tab_assetType.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_linked_software)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.assetsDGV_s)).EndInit();
@@ -398,6 +621,23 @@ namespace CMP307_project
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Button btn_edit;
+        private System.Windows.Forms.DataGridView dgv_linked_software;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_notes;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lbl_pd;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lbl_ip;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lbl_type;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lbl_man;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbl_model;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbl_name;
     }
 }
 
