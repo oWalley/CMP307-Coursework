@@ -106,6 +106,12 @@
     <Compile Include="Update_form_h.Designer.cs">
       <DependentUpon>Update_form_h.cs</DependentUpon>
     </Compile>
+    <Compile Include="Update_form_s.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update_form_s.Designer.cs">
+      <DependentUpon>Update_form_s.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Add_form_h.resx">
       <DependentUpon>Add_form_h.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +135,9 @@
     </Compile>
     <EmbeddedResource Include="Update_form_h.resx">
       <DependentUpon>Update_form_h.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Update_form_s.resx">
+      <DependentUpon>Update_form_s.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="mssql2001921DataSet.xsc">
       <DependentUpon>mssql2001921DataSet.xsd</DependentUpon>
