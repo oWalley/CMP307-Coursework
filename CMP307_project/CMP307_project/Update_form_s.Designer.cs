@@ -50,6 +50,7 @@ namespace CMP307_project
             this.btn_update.TabIndex = 31;
             this.btn_update.Text = "Update Asset";
             this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // btn_cancel
             // 
