@@ -78,6 +78,8 @@ namespace CMP307_project
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
+            this.btn_nist = new System.Windows.Forms.Button();
+            this.btn_exit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.mssql2001921DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetsDGV_h)).BeginInit();
@@ -559,11 +561,33 @@ namespace CMP307_project
             this.btn_edit.UseVisualStyleBackColor = true;
             this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
+            // btn_nist
+            // 
+            this.btn_nist.Location = new System.Drawing.Point(426, 428);
+            this.btn_nist.Name = "btn_nist";
+            this.btn_nist.Size = new System.Drawing.Size(132, 37);
+            this.btn_nist.TabIndex = 11;
+            this.btn_nist.Text = "Check for Vulnerabilities";
+            this.btn_nist.UseVisualStyleBackColor = true;
+            this.btn_nist.Click += new System.EventHandler(this.btn_nist_Click);
+            // 
+            // btn_exit
+            // 
+            this.btn_exit.Location = new System.Drawing.Point(757, 429);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Size = new System.Drawing.Size(132, 37);
+            this.btn_exit.TabIndex = 12;
+            this.btn_exit.Text = "Exit";
+            this.btn_exit.UseVisualStyleBackColor = true;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(905, 477);
+            this.Controls.Add(this.btn_exit);
+            this.Controls.Add(this.btn_nist);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.btn_edit);
@@ -638,6 +662,8 @@ namespace CMP307_project
         private System.Windows.Forms.Label lbl_model;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lbl_name;
+        private System.Windows.Forms.Button btn_nist;
+        private System.Windows.Forms.Button btn_exit;
     }
 }
 

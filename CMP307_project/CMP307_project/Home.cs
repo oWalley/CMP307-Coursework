@@ -19,6 +19,7 @@ namespace CMP307_project
         Update_form_h upd_form_hard;
         Add_form_s add_form_soft;
         Update_form_s upd_form_soft;
+        NIST_form nist_form;
 
         public Home()
         {
@@ -241,6 +242,28 @@ namespace CMP307_project
             {
                 Console.WriteLine(_e.Message);
             }
+        }
+
+        private void btn_nist_Click(object sender, EventArgs e)
+        {
+            if (nist_form != null) nist_form.Close();
+            nist_form = new NIST_form();
+
+            if(tab_assetType.SelectedIndex == 0)
+            {               
+                nist_form.keyword = assetsDGV_s.SelectedCells[2].Value.ToString();
+            }
+            else
+            {
+                nist_form.keyword = assetsDGV_s.SelectedCells[1].Value.ToString();
+            }
+
+            nist_form.Show();                   
+        }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();       
         }
     }
 }
