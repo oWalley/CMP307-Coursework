@@ -26,7 +26,7 @@ namespace CMP307_project
             }
             catch (Exception ex)
             {
-                Console.WriteLine("We had a problem: " + ex.Message.ToString());
+                Console.WriteLine("Error: " + ex.Message.ToString());
             }
 
             return data;
@@ -43,29 +43,36 @@ namespace CMP307_project
         }
 
         private void NIST_form_Load(object sender, EventArgs e)
-        {                
-            REST_client rClient = new REST_client();
+        {
+            try 
+            { 
+                REST_client rClient = new REST_client();
     
-            rClient.endPoint = "https://services.nvd.nist.gov/rest/json/cves/2.0/?pubStartDate=2022-09-04T00:00:00.000&pubEndDate=2022-12-04T00:00:00.000&keywordSearch=" + keyword;
-            rClient.httpMethod = httpVerb.GET;
+                rClient.endPoint = "https://services.nvd.nist.gov/rest/json/cves/2.0/?pubStartDate=2022-09-04T00:00:00.000&pubEndDate=2022-12-04T00:00:00.000&keywordSearch=" + keyword;
+                rClient.httpMethod = httpVerb.GET;
 
-            // Send request 
-            string strResponse = string.Empty;
-            strResponse = rClient.makeRequest();
+                // Send request 
+                string strResponse = string.Empty;
+                strResponse = rClient.makeRequest();
 
-            // Convert json string into object
-            var data = deserialiseJSON(strResponse);
-            int resultCount = data.totalResults;
+                // Convert json string into object
+                var data = deserialiseJSON(strResponse);
+                int resultCount = data.totalResults;
 
-            // Display vulnerability count
-            lbl_count.Text = resultCount.ToString();
+                // Display vulnerability count
+                lbl_count.Text = resultCount.ToString();
 
-            // Add vulnerabilities to list box
-            for(int i = 0; i < resultCount; i++)
-            {                            
-                lv_vulnerabilities.Items.Add((i+1)+". "+data.vulnerabilities[i].cve.descriptions[0].value.ToString(), i);               
+                // Add vulnerabilities to list box
+                for(int i = 0; i < resultCount; i++)
+                {                            
+                    lv_vulnerabilities.Items.Add((i+1)+". "+data.vulnerabilities[i].cve.descriptions[0].value.ToString(), i);               
+                }
             }
-                                    
-        }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message.ToString());
+            }
+
+}
     }
 }

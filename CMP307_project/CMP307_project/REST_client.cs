@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Net;
 
+// ##########################################################################
 // Class code from: https://dotnetplaybook.com/posting-to-a-rest-api-with-c/
+// ##########################################################################
 
 namespace CMP307_project
 {
@@ -23,7 +25,7 @@ namespace CMP307_project
         public string endPoint { get; set; }
         public httpVerb httpMethod { get; set; }
       
-        public string postJSON { get; set; } //New Attribute
+        public string postJSON { get; set; }
 
         public REST_client()
         {
